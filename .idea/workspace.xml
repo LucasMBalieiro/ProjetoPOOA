@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b980f9c-5aca-449b-8b09-a1bca35b8701" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Funcionario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Gerente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Pessoa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/relatorios/Relatorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/relatorios/RelatorioServicos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/relatorios/RelatorioVendas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d9b563ee-4e95-438d-9887-386ca4be7a71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,21 +42,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/rodrigo/UFSCAR/POOA/ProjetoPOOA",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "Rebasing main"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,6 +56,7 @@
       <workItem from="1688347466092" duration="89000" />
       <workItem from="1688347564287" duration="237000" />
       <workItem from="1688347807459" duration="256000" />
+      <workItem from="1688379996458" duration="88000" />
     </task>
     <servers />
   </component>
