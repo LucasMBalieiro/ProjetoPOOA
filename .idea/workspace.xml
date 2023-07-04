@@ -11,7 +11,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoCliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/LaudoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/LaudoTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/LaudoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/LaudoTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/Recomendacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/Recomendacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/status/EmAnalise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/status/StatusServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/status/StatusServico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

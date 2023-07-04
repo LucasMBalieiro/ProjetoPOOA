@@ -4,10 +4,6 @@ import br.ufscar.pooa.model.servicos.servico.Servico;
 
 public abstract class StatusServico {
 
-  public void aprovar(Servico servico) {
-    throw new RuntimeException("O serviço não pode ser aprovado.");
-  }
-
   public void iniciar(Servico servico) {
     throw new RuntimeException("O serviço não pode ser iniciado.");
   }

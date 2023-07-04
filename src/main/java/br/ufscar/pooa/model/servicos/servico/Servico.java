@@ -124,28 +124,25 @@ public class Servico {
     this.laudo = laudo;
   }
 
-  public void aprovar() {
-
-  }
 
   public void iniciar() {
-
+    this.status.iniciar(this);
   }
 
   public void cancelar() {
-
+    this.status.cancelar(this);
   }
 
   public void finalizar() {
-
+    this.status.finalizar(this);
   }
 
   public double calcularValor() {
     return 0;
   }
 
-  public void adicionarServicoFornecido() {
-
+  public void adicionarServicoFornecido(ServicoFornecido servicoFornecido) {
+    this.servicos.add(servicoFornecido);
   }
 
 }

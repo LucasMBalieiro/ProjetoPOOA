@@ -1,4 +1,4 @@
-package br.ufscar.pooa.model.servicos.servico.laudo;
+package br.ufscar.pooa.model.servicos.laudo;
 
 import br.ufscar.pooa.model.servicos.fornecidos.ServicoFornecido;
 
