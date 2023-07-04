@@ -10,4 +10,12 @@ public class Peca extends ItemDeEstoque implements Utilizavel {
   public Peca(String marca, String modelo, int quantidadeDeEstoque, double valor) {
     super(marca, modelo, quantidadeDeEstoque, valor);
   }
+
+  public List<Equipamento> getEquipamentos() {
+    return equipamentos;
+  }
+
+  public void setEquipamentos(List<Equipamento> equipamentos) {
+    this.equipamentos = equipamentos;
+  }
 }
