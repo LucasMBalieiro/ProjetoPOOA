@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b563ee-4e95-438d-9887-386ca4be7a71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/Deposito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/Deposito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/LaudoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/laudo/LaudoTecnico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +45,33 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Rebasing main"
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Aplicacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.ufscar.pooa.view.Aplicacao" />
+      <module name="projeto-pooa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufscar.pooa.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Aplicacao" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

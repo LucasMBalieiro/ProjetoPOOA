@@ -1,5 +1,6 @@
 package br.ufscar.pooa.model.servicos.servico.laudo;
 
+import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.servicos.EquipamentoCliente;
 
 import java.util.List;

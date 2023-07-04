@@ -1,6 +1,7 @@
 package br.ufscar.pooa.model.servicos;
 
 import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
+import br.ufscar.pooa.model.pessoas.Cliente;
 
 import java.time.LocalDate;
 

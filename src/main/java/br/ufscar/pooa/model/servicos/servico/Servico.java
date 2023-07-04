@@ -1,5 +1,9 @@
 package br.ufscar.pooa.model.servicos.servico;
 
+import br.ufscar.pooa.model.comercio.Venda;
+import br.ufscar.pooa.model.pessoas.Cliente;
+import br.ufscar.pooa.model.pessoas.Funcionario;
+import br.ufscar.pooa.model.servicos.EquipamentoCliente;
 import br.ufscar.pooa.model.servicos.fornecidos.ServicoFornecido;
 import br.ufscar.pooa.model.servicos.servico.status.StatusServico;
 
