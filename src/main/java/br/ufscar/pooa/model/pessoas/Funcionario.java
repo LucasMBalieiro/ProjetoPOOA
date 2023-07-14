@@ -2,26 +2,30 @@ package br.ufscar.pooa.model.pessoas;
 
 import br.ufscar.pooa.model.comercio.Orcamento;
 import br.ufscar.pooa.model.comercio.Item;
-import br.ufscar.pooa.model.servicos.EquipamentoCliente;
+import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 
 import java.util.ArrayList;
 
-public class Funcionario extends Pessoa {
-    public Funcionario(String CPF, String nome, String login, String senha, String telefone, String email) {
-        super(CPF, nome, login, senha, telefone, email);
-    }
+public class Funcionario extends Usuario {
+  private DadosPessoais dadosPessoais;
 
-    public void gerarFatura(Orcamento valor) {
-    }
+  public Funcionario(String nomeDeUsuario, String senha, DadosPessoais dadosPessoais) {
+    super(nomeDeUsuario, senha);
+    this.dadosPessoais = dadosPessoais;
+  }
 
-    public void realizarOrcamento(ArrayList<Item> itens) {
-    }
+  public DadosPessoais getDadosPessoais() {
+    return dadosPessoais;
+  }
 
-    public Cliente cadastrarCliente() {
-        return null;
-    }
+  public void setDadosPessoais(DadosPessoais dadosPessoais) {
+    this.dadosPessoais = dadosPessoais;
+  }
 
-    public EquipamentoCliente cadastrarEquipamento() {
-        return null;
-    }
+  @Override
+  public String toString() {
+    return "Funcionario{" +
+        "dadosPessoais=" + dadosPessoais +
+        '}';
+  }
 }

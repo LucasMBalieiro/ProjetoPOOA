@@ -3,37 +3,15 @@ package br.ufscar.pooa.model.deposito.estoque.itens;
 import java.util.List;
 
 public class Equipamento extends ItemDeEstoque {
-  private String tipo;
-  private double valorMaoDeObra;
-  private double valorEntregaTecnica;
   private List<Peca> pecas;
 
-  public Equipamento(String marca, String modelo, int quantidadeDeEstoque, double valor) {
-    super(marca, modelo, quantidadeDeEstoque, valor);
+  public Equipamento(long id, String marca, String modelo, int quantidadeEmEstoque, double valorDeVenda, List<String> etiquetas, List<Peca> pecas) {
+    super(id, marca, modelo, quantidadeEmEstoque, valorDeVenda, etiquetas);
+    this.pecas = pecas;
   }
 
-  public String getTipo() {
-    return tipo;
-  }
-
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
-  }
-
-  public double getValorMaoDeObra() {
-    return valorMaoDeObra;
-  }
-
-  public void setValorMaoDeObra(double valorMaoDeObra) {
-    this.valorMaoDeObra = valorMaoDeObra;
-  }
-
-  public double getValorEntregaTecnica() {
-    return valorEntregaTecnica;
-  }
-
-  public void setValorEntregaTecnica(double valorEntregaTecnica) {
-    this.valorEntregaTecnica = valorEntregaTecnica;
+  public Equipamento(long id, String marca, String modelo, int quantidadeEmEstoque, double valorDeVenda, List<String> etiquetas) {
+    super(id, marca, modelo, quantidadeEmEstoque, valorDeVenda, etiquetas);
   }
 
   public List<Peca> getPecas() {
@@ -42,5 +20,12 @@ public class Equipamento extends ItemDeEstoque {
 
   public void setPecas(List<Peca> pecas) {
     this.pecas = pecas;
+  }
+
+  @Override
+  public String toString() {
+    return "Equipamento{" +
+        "pecas=" + pecas +
+        '}';
   }
 }

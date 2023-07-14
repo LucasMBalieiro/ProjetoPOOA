@@ -1,16 +1,61 @@
 package br.ufscar.pooa.model.deposito.estoque.itens;
 
-public abstract class ItemDeEstoque {
+import br.ufscar.pooa.model.comercio.Produto;
+
+import java.util.List;
+
+public abstract class ItemDeEstoque implements Produto {
+  private long id;
   private String marca;
   private String modelo;
-  private int quantidadeDeEstoque;
-  private double valor;
+  private int quantidadeEmEstoque;
+  private double valorDeVenda;
+  private List<String> etiquetas;
 
-  public ItemDeEstoque(String marca, String modelo, int quantidadeDeEstoque, double valor) {
+  public ItemDeEstoque(long id, String marca, String modelo, int quantidadeEmEstoque, double valorDeVenda, List<String> etiquetas) {
+    this.id = id;
     this.marca = marca;
     this.modelo = modelo;
-    this.quantidadeDeEstoque = quantidadeDeEstoque;
-    this.valor = valor;
+    this.quantidadeEmEstoque = quantidadeEmEstoque;
+    this.valorDeVenda = valorDeVenda;
+    this.etiquetas = etiquetas;
+  }
+
+  public String obterDescricao() {
+    return this.marca + " " + this.modelo;
+  }
+
+  public double obterValor() {
+    return this.valorDeVenda;
+  }
+
+  @Override
+  public void registrarVenda(int quantidade) {
+    this.quantidadeEmEstoque -= quantidade;
+  }
+
+  public int getQuantidadeEmEstoque() {
+    return quantidadeEmEstoque;
+  }
+
+  public void setQuantidadeEmEstoque(int quantidadeEmEstoque) {
+    this.quantidadeEmEstoque = quantidadeEmEstoque;
+  }
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public List<String> getEtiquetas() {
+    return etiquetas;
+  }
+
+  public void setEtiquetas(List<String> etiquetas) {
+    this.etiquetas = etiquetas;
   }
 
   public String getMarca() {
@@ -29,19 +74,23 @@ public abstract class ItemDeEstoque {
     this.modelo = modelo;
   }
 
-  public int getQuantidadeDeEstoque() {
-    return quantidadeDeEstoque;
+  public double getValorDeVenda() {
+    return valorDeVenda;
   }
 
-  public void setQuantidadeDeEstoque(int quantidadeDeEstoque) {
-    this.quantidadeDeEstoque = quantidadeDeEstoque;
+  public void setValorDeVenda(double valorDeVenda) {
+    this.valorDeVenda = valorDeVenda;
   }
 
-  public double getValor() {
-    return valor;
-  }
-
-  public void setValor(double valor) {
-    this.valor = valor;
+  @Override
+  public String toString() {
+    return "ItemDeEstoque{" +
+        "id=" + id +
+        ", marca='" + marca + '\'' +
+        ", modelo='" + modelo + '\'' +
+        ", quantidadeEmEstoque=" + quantidadeEmEstoque +
+        ", valorDeVenda=" + valorDeVenda +
+        ", etiquetas=" + etiquetas +
+        '}';
   }
 }

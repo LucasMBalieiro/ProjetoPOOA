@@ -1,23 +1,62 @@
 package br.ufscar.pooa.model.servicos.laudo;
 
 import br.ufscar.pooa.model.pessoas.Cliente;
-import br.ufscar.pooa.model.servicos.EquipamentoCliente;
+import br.ufscar.pooa.model.pessoas.Funcionario;
+import br.ufscar.pooa.model.servicos.OrdemDeServico;
+import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 
 import java.util.List;
 
 public class LaudoTecnico {
   private List<Recomendacao> recomendacoes;
-  private Cliente cliente;
   private double valorTotal;
   private EquipamentoCliente equipamento;
   private String laudo;
+  private OrdemDeServico ordemDeServico;
+  private Funcionario funcionario;
 
-  public LaudoTecnico(List<Recomendacao> recomendacoes, Cliente cliente, double valorTotal, EquipamentoCliente equipamento, String laudo) {
+  public LaudoTecnico(List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, double valorTotal, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
     this.recomendacoes = recomendacoes;
-    this.cliente = cliente;
+    this.ordemDeServico = ordemDeServico;
     this.valorTotal = valorTotal;
     this.equipamento = equipamento;
     this.laudo = laudo;
+    this.funcionario = funcionario;
+  }
+
+  public LaudoTecnico(List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
+    this.recomendacoes = recomendacoes;
+    this.ordemDeServico = ordemDeServico;
+    this.equipamento = equipamento;
+    this.laudo = laudo;
+    this.funcionario = funcionario;
+
+    this.valorTotal = this.calcularValorTotal();
+  }
+
+  private double calcularValorTotal() {
+    double valorTotal = 0;
+    for (Recomendacao recomendacao : recomendacoes) {
+      valorTotal += recomendacao.getValor();
+    }
+
+    return valorTotal;
+  }
+
+  public Funcionario getFuncionario() {
+    return funcionario;
+  }
+
+  public void setFuncionario(Funcionario funcionario) {
+    this.funcionario = funcionario;
+  }
+
+  public OrdemDeServico getOrdemDeServico() {
+    return ordemDeServico;
+  }
+
+  public void setOrdemDeServico(OrdemDeServico ordemDeServico) {
+    this.ordemDeServico = ordemDeServico;
   }
 
   public List<Recomendacao> getRecomendacoes() {
@@ -26,14 +65,6 @@ public class LaudoTecnico {
 
   public void setRecomendacoes(List<Recomendacao> recomendacoes) {
     this.recomendacoes = recomendacoes;
-  }
-
-  public Cliente getCliente() {
-    return cliente;
-  }
-
-  public void setCliente(Cliente cliente) {
-    this.cliente = cliente;
   }
 
   public double getValorTotal() {
@@ -58,5 +89,17 @@ public class LaudoTecnico {
 
   public void setLaudo(String laudo) {
     this.laudo = laudo;
+  }
+
+  @Override
+  public String toString() {
+    return "LaudoTecnico{" +
+        "recomendacoes=" + recomendacoes +
+        ", valorTotal=" + valorTotal +
+        ", equipamento=" + equipamento +
+        ", laudo='" + laudo + '\'' +
+        ", ordemDeServico=" + ordemDeServico +
+        ", funcionario=" + funcionario +
+        '}';
   }
 }

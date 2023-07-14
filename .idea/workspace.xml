@@ -5,8 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b563ee-4e95-438d-9887-386ca4be7a71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/ServicosMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Recibo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/services/IEquipamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/services/IEstoque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/DadosPessoais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoAceitoParaServico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/status/EAguardandoColeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/status/EEmAnalise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/status/EEmManutencao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/status/EEntregue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/status/StatusEquipamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/status/GAprovada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/status/GEmAnalise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/status/GRecusada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/status/StatusGarantia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/EquipVendaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/EquipClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/EquipClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/EquipamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/EquipamentoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/GerenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/GerenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/ServicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/controller/ServicoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/comercio/Venda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/Deposito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/Deposito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/Utilizavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/services/IItemDeServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Equipamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/ItemDeEstoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/ItemDeEstoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/deposito/estoque/itens/Peca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Gerente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Gerente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/pessoas/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/EquipamentoCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/equipamentocliente/EquipamentoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/OrdemDeServico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/EntregaTecnica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/EntregaTecnica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Limpeza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Limpeza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Outro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Outro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Rebobinamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Rebobinamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Regulagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/Regulagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/ServicoFornecido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/ServicoFornecido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/TrocaDePeca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/TrocaDePeca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/Garantia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/Garantia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/GarantiaDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/fornecidos/garantia/GarantiaDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/LaudoTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/LaudoTecnico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/Recomendacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/laudo/Recomendacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/status/StatusServico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufscar/pooa/model/servicos/servico/status/StatusServico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +69,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,16 +95,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/vini/Documents/Ufscar/engenharia-software-2/jabref",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.ServicosMain">
     <configuration name="Aplicacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.ufscar.pooa.view.Aplicacao" />
       <module name="projeto-pooa" />
@@ -61,8 +126,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ServicosMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.ufscar.pooa.ServicosMain" />
+      <module name="projeto-pooa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufscar.pooa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ServicosMain" />
         <item itemvalue="Application.Aplicacao" />
       </list>
     </recent_temporary>
@@ -70,7 +149,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3b980f9c-5aca-449b-8b09-a1bca35b8701" name="Changes" comment="" />
+      <changelist id="d9b563ee-4e95-438d-9887-386ca4be7a71" name="Changes" comment="" />
       <created>1688347461476</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -79,6 +158,9 @@
       <workItem from="1688347564287" duration="237000" />
       <workItem from="1688347807459" duration="256000" />
       <workItem from="1688379996458" duration="88000" />
+      <workItem from="1688777176061" duration="18000" />
+      <workItem from="1688777634070" duration="41000" />
+      <workItem from="1689346369160" duration="18114000" />
     </task>
     <servers />
   </component>
@@ -100,5 +182,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

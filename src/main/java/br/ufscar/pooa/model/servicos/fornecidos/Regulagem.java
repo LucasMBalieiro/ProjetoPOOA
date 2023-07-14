@@ -1,13 +1,14 @@
 package br.ufscar.pooa.model.servicos.fornecidos;
 
 import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
-import br.ufscar.pooa.model.deposito.estoque.Utilizavel;
+import br.ufscar.pooa.model.deposito.estoque.services.IItemDeServico;
+import br.ufscar.pooa.model.servicos.EquipamentoAceitoParaServico;
 
 import java.util.List;
 
 public class Regulagem extends ServicoFornecido {
 
-  public Regulagem(String nome, String descricao, List<Utilizavel> itens, Equipamento equipamento, double valor) {
+  public Regulagem(String nome, String descricao, List<IItemDeServico> itens, EquipamentoAceitoParaServico equipamento, double valor) {
     super(nome, descricao, itens, equipamento, valor);
   }
 

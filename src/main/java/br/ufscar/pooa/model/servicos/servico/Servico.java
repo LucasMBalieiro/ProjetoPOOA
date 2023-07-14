@@ -3,8 +3,9 @@ package br.ufscar.pooa.model.servicos.servico;
 import br.ufscar.pooa.model.comercio.Venda;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.pessoas.Funcionario;
-import br.ufscar.pooa.model.servicos.EquipamentoCliente;
+import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 import br.ufscar.pooa.model.servicos.fornecidos.ServicoFornecido;
+import br.ufscar.pooa.model.servicos.servico.status.Aprovado;
 import br.ufscar.pooa.model.servicos.servico.status.StatusServico;
 
 import java.time.LocalDate;
@@ -12,7 +13,6 @@ import java.util.List;
 
 public class Servico {
   private String nome;
-  private Cliente cliente;
   private EquipamentoCliente equipamento;
   private Venda daVenda;
   private LocalDate dataInicio;
@@ -21,19 +21,31 @@ public class Servico {
   private StatusServico status;
   private double valor;
   private String laudo;
+  private boolean estaPago;
 
   public Servico(String nome,
-                 Cliente cliente,
                  EquipamentoCliente equipamento,
-                 Venda daVenda,
                  LocalDate dataInicio,
                  Funcionario responsavel,
-                 List<ServicoFornecido> servicos,
-                 StatusServico status,
-                 double valor,
-                 String laudo) {
+                 List<ServicoFornecido> servicos) {
     this.nome = nome;
-    this.cliente = cliente;
+    this.equipamento = equipamento;
+    this.dataInicio = dataInicio;
+    this.responsavel = responsavel;
+    this.servicos = servicos;
+
+    this.daVenda = null; // busca se houve venda com esse equipamento
+    this.equipamento.adiconarServico(this);
+    this.equipamento.iniciarManutencao();
+    this.status = new Aprovado();
+    this.valor = this.calcularValorTotal();
+    this.estaPago = false;
+    System.out.println("Valor total: " + this.valor);
+
+  }
+
+  public Servico(String nome, EquipamentoCliente equipamento, Venda daVenda, LocalDate dataInicio, Funcionario responsavel, List<ServicoFornecido> servicos, StatusServico status, double valor, String laudo, boolean estaPago) {
+    this.nome = nome;
     this.equipamento = equipamento;
     this.daVenda = daVenda;
     this.dataInicio = dataInicio;
@@ -42,6 +54,19 @@ public class Servico {
     this.status = status;
     this.valor = valor;
     this.laudo = laudo;
+    this.estaPago = estaPago;
+
+    this.equipamento.adiconarServico(this);
+    this.equipamento.iniciarManutencao();
+  }
+
+  public double calcularValorTotal() {
+    double valorTotal = 0;
+    for (ServicoFornecido servico : servicos) {
+      valorTotal += servico.getValor();
+    }
+
+    return valorTotal;
   }
 
   public String getNome() {
@@ -50,14 +75,6 @@ public class Servico {
 
   public void setNome(String nome) {
     this.nome = nome;
-  }
-
-  public Cliente getCliente() {
-    return cliente;
-  }
-
-  public void setCliente(Cliente cliente) {
-    this.cliente = cliente;
   }
 
   public EquipamentoCliente getEquipamento() {
@@ -133,8 +150,18 @@ public class Servico {
     this.status.cancelar(this);
   }
 
-  public void finalizar() {
+  public void registrarPagamento() {
+    this.estaPago = true;
+  }
+
+  public boolean estaPago() {
+    return this.estaPago;
+  }
+
+  public void finalizar(String laudo) {
     this.status.finalizar(this);
+    this.equipamento.iniciarColeta();
+    this.laudo = laudo;
   }
 
   public double calcularValor() {
@@ -145,4 +172,23 @@ public class Servico {
     this.servicos.add(servicoFornecido);
   }
 
+  public void removerServicoFornecido(ServicoFornecido servicoFornecido) {
+    this.servicos.remove(servicoFornecido);
+  }
+
+  @Override
+  public String toString() {
+    return "Servico{" +
+        "nome='" + nome + '\'' +
+        ", equipamento=" + equipamento.getCliente().getDadosPessoais().getNome() +
+        ", daVenda=" + daVenda +
+        ", dataInicio=" + dataInicio +
+        ", responsavel=" + responsavel +
+        ", servicos=" + servicos +
+        ", status=" + status +
+        ", valor=" + valor +
+        ", laudo='" + laudo + '\'' +
+        ", estaPago=" + estaPago +
+        '}';
+  }
 }
