@@ -1,9 +1,9 @@
 package br.ufscar.pooa.model.comercio;
 
 public interface Produto {
-  public double obterValor();
+  public double getValor();
 
-  public String obterDescricao();
+  public String getDescricao();
 
   public void registrarVenda(int quantidade);
 }

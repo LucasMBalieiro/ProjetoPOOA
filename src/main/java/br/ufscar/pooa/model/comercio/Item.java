@@ -6,10 +6,10 @@ public class Item {
   private double valor; // valor unitário
 
   // Constructor
-  public Item(Produto produto, int quantidade, double valor) {
+  public Item(Produto produto, int quantidade) {
     this.produto = produto;
     this.quantidade = quantidade;
-    this.valor = valor;
+    this.valor = this.produto.getValor();
   }
 
   // Setter and Getter methods
@@ -37,5 +37,13 @@ public class Item {
     this.valor = valor;
   }
 
+  @Override
+  public String toString() {
+    return "Item{" +
+        "produto=" + produto +
+        ", quantidade=" + quantidade +
+        ", valor=" + valor +
+        '}';
+  }
 }
 

@@ -19,4 +19,5 @@ public class Peca extends ItemDeEstoque implements IItemDeServico {
   public void setEquipamentos(List<Equipamento> equipamentos) {
     this.equipamentos = equipamentos;
   }
+  
 }

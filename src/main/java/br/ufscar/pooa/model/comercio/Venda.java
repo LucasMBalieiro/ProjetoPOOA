@@ -33,7 +33,7 @@ public class Venda {
 
     if (itens != null) {
       for (Item item : itens) {
-        valorTotal += item.getProduto().obterValor();
+        valorTotal += item.getProduto().getValor();
       }
     }
 

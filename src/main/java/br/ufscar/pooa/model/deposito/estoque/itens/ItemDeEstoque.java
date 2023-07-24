@@ -21,11 +21,11 @@ public abstract class ItemDeEstoque implements Produto {
     this.etiquetas = etiquetas;
   }
 
-  public String obterDescricao() {
+  public String getDescricao() {
     return this.marca + " " + this.modelo;
   }
 
-  public double obterValor() {
+  public double getValor() {
     return this.valorDeVenda;
   }
 

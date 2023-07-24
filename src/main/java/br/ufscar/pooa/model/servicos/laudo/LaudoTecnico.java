@@ -14,6 +14,7 @@ public class LaudoTecnico {
   private String laudo;
   private OrdemDeServico ordemDeServico;
   private Funcionario funcionario;
+  private String template;
 
   public LaudoTecnico(List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, double valorTotal, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
     this.recomendacoes = recomendacoes;
@@ -32,6 +33,7 @@ public class LaudoTecnico {
     this.funcionario = funcionario;
 
     this.valorTotal = this.calcularValorTotal();
+    this.template = "laudo_tecnico";
   }
 
   private double calcularValorTotal() {
@@ -91,6 +93,10 @@ public class LaudoTecnico {
     this.laudo = laudo;
   }
 
+  public String getTemplate() {
+    return this.template;
+  }
+  
   @Override
   public String toString() {
     return "LaudoTecnico{" +
@@ -102,4 +108,5 @@ public class LaudoTecnico {
         ", funcionario=" + funcionario +
         '}';
   }
+
 }

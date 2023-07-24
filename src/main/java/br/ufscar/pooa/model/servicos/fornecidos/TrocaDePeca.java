@@ -16,7 +16,7 @@ public class TrocaDePeca extends ServicoFornecido {
     double valor = 0;
 
     for (IItemDeServico item : this.itens) {
-      valor += item.obterValor();
+      valor += item.getValor();
     }
 
     return this.equipamento.getValorDeMaoDeObra() + valor;

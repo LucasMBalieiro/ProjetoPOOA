@@ -11,12 +11,15 @@ public class OrdemDeServico {
   private LocalDate dataEntrada;
   private List<EquipamentoCliente> equipamentos;
   private String defeitosReclamados;
+  private String template;
 
   public OrdemDeServico(long id, LocalDate dataEntrada, List<EquipamentoCliente> equipamentos, String defeitosReclamados) {
     this.id = id;
     this.dataEntrada = dataEntrada;
     this.equipamentos = equipamentos;
     this.defeitosReclamados = defeitosReclamados;
+
+    this.template = "ordem_de_servico";
   }
 
   public long getId() {
@@ -59,5 +62,9 @@ public class OrdemDeServico {
         ", equipamentos=" + equipamentos +
         ", defeitosReclamados='" + defeitosReclamados + '\'' +
         '}';
+  }
+
+  public String getTemplate() {
+    return this.template;
   }
 }

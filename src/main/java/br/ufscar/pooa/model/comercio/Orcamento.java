@@ -6,39 +6,66 @@ import java.util.Date;
 import java.util.List;
 
 public class Orcamento {
-    private int id;
-    private List<Item> itens;
-    private Cliente cliente;
-    private Date data;
-    private double valorTotal;
+  private int id;
+  private List<Item> itens;
+  private Cliente cliente;
+  private Date data;
+  private double valorTotal;
+  private String template;
 
-    // Constructor
-    public Orcamento(int id, List<Item> itens, Cliente cliente, Date data, double valorTotal) {
-        this.id = id;
-        this.itens = itens;
-        this.cliente = cliente;
-        this.data = data;
-        this.valorTotal = valorTotal;
-    }
+  // Constructor
+  public Orcamento(int id, List<Item> itens, Cliente cliente, Date data, double valorTotal) {
+    this.id = id;
+    this.itens = itens;
+    this.cliente = cliente;
+    this.data = data;
+    this.valorTotal = valorTotal;
 
-    // Setter and Getter methods
-    public int getId() { return id; }
+    this.template = "orcamento";
+  }
 
-    public void setId(int id) { this.id = id; }
+  // Setter and Getter methods
+  public int getId() {
+    return id;
+  }
 
-    public List<Item> getItens() { return itens; }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public void setItens(List<Item> itens) { this.itens = itens; }
+  public List<Item> getItens() {
+    return itens;
+  }
 
-    public Cliente getCliente() { return cliente; }
+  public void setItens(List<Item> itens) {
+    this.itens = itens;
+  }
 
-    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+  public Cliente getCliente() {
+    return cliente;
+  }
 
-    public Date getData() { return data; }
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
+  }
 
-    public void setData(Date data) { this.data = data; }
+  public Date getData() {
+    return data;
+  }
 
-    public double getValorTotal() { return valorTotal; }
+  public void setData(Date data) {
+    this.data = data;
+  }
 
-    public void setValorTotal(double valorTotal) { this.valorTotal = valorTotal; }
+  public double getValorTotal() {
+    return valorTotal;
+  }
+
+  public void setValorTotal(double valorTotal) {
+    this.valorTotal = valorTotal;
+  }
+
+  public String getTemplate() {
+    return template;
+  }
 }

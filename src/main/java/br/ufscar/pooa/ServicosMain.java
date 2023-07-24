@@ -5,6 +5,9 @@ import br.ufscar.pooa.model.comercio.Recibo;
 import br.ufscar.pooa.model.comercio.Venda;
 import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
 import br.ufscar.pooa.model.deposito.estoque.itens.Peca;
+import br.ufscar.pooa.model.pdfs.GeradorPdf;
+import br.ufscar.pooa.model.pdfs.GeradorPdfService;
+import br.ufscar.pooa.model.pdfs.GeradorRecibo;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.pessoas.DadosPessoais;
 import br.ufscar.pooa.model.pessoas.Funcionario;
@@ -18,6 +21,7 @@ import br.ufscar.pooa.model.servicos.laudo.Recomendacao;
 import br.ufscar.pooa.model.servicos.servico.Servico;
 import br.ufscar.pooa.model.servicos.servico.status.Aprovado;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -172,8 +176,23 @@ public class ServicosMain {
       System.out.println("Erro ao entregar equipamento (sem pagamento): " + e.getMessage());
     }
 
+    Item item = new Item(
+        filtroDeAr,
+        2
+    );
+
+    Item item1 = new Item(
+        filtroDeAr2,
+        3
+    );
+
+    System.out.println("Item: " + item);
+
     Venda venda = new Venda(
-        null,
+        Arrays.asList(
+            item,
+            item1
+        ),
         cliente,
         Arrays.asList(
             servico
@@ -187,6 +206,15 @@ public class ServicosMain {
 
     System.out.println("Venda: " + venda);
     System.out.println("Recibo: " + recibo);
+
+    String result = null;
+    try {
+      result = new GeradorPdfService(new GeradorRecibo(recibo)).gerar();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+    System.out.println("PDF: " + result);
 
     equipamentoCliente.entregar();
 
