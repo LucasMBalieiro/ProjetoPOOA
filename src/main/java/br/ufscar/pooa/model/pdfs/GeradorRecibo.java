@@ -22,7 +22,9 @@ public class GeradorRecibo extends GeradorPdf {
 
   public GeradorRecibo(Recibo recibo) {
     this.recibo = recibo;
-    this.caminhoPdfGerado = this.caminhoBaseResultados + this.recibo.getTemplate() + "_filled.pdf";
+    this.caminhoPdfGerado = this.caminhoBaseResultados + this.recibo.getTemplate() +
+            this.recibo.getCliente().getDadosPessoais().getNome() + "_"
+    + this.recibo.getData().toString() + "-" +this.recibo.getId().toString() + ".pdf";
   }
 
   @Override

@@ -82,7 +82,7 @@ public class ServicosMain {
     Peca filtroDeAr = new Peca(
         12223212,
         "Toyama",
-        "Filtro de ar do Gerador Toyama TG2800CXXX",
+        "Filtro de ar do Gerador Toyama XXXXXXX",
         10,
         30.00,
 
