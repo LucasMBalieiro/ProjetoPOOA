@@ -7,6 +7,8 @@ import java.util.Set;
 public interface IEstoque {
   public Set<ItemDeEstoque> getItens();
 
+  public void adicionarItem(ItemDeEstoque item);
+
   public void aumentarEstoque(
       ItemDeEstoque item, int quantidade);
 

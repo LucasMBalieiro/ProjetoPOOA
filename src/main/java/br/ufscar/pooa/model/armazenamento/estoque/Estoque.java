@@ -14,7 +14,7 @@ public class Estoque implements IEstoque {
     this.itens = new HashSet<>();
   }
 
-  public synchronized Estoque getInstance() {
+  public static synchronized Estoque getInstancia() {
     if (Estoque.instance == null) {
       Estoque.instance = new Estoque();
     }
@@ -26,6 +26,11 @@ public class Estoque implements IEstoque {
   @Override
   public Set<ItemDeEstoque> getItens() {
     return this.itens;
+  }
+
+  @Override
+  public void adicionarItem(ItemDeEstoque item) {
+    this.itens.add(item);
   }
 
   @Override

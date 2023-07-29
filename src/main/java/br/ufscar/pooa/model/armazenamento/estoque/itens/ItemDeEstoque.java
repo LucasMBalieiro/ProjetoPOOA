@@ -91,7 +91,8 @@ public abstract class ItemDeEstoque implements Produto {
   @Override
   public String toString() {
     return "ItemDeEstoque{" +
-        "id=" + id +
+        "tipo='" + this.getClass().getSimpleName() + '\'' +
+        ", id=" + id +
         ", marca='" + marca + '\'' +
         ", modelo='" + modelo + '\'' +
         ", quantidadeEmEstoque=" + quantidadeEmEstoque +

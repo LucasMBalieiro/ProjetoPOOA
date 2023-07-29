@@ -27,12 +27,5 @@ public class Equipamento extends ItemDeEstoque {
     this.pecas.remove(peca);
   }
 
-  @Override
-  public String toString() {
-    return "Equipamento{" +
-        "pecas=" + pecas +
-        '}';
-  }
-
 
 }

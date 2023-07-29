@@ -1,11 +1,16 @@
 package br.ufscar.pooa;
 
+import br.ufscar.pooa.model.armazenamento.Deposito;
+import br.ufscar.pooa.model.armazenamento.IDeposito;
+import br.ufscar.pooa.model.armazenamento.estoque.Estoque;
+import br.ufscar.pooa.model.armazenamento.estoque.IEstoque;
 import br.ufscar.pooa.model.comercio.Item;
 import br.ufscar.pooa.model.comercio.Recibo;
 import br.ufscar.pooa.model.comercio.Venda;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Peca;
 import br.ufscar.pooa.model.pessoas.Cliente;
+import br.ufscar.pooa.model.pessoas.FactoryPessoa;
 import br.ufscar.pooa.model.pessoas.Funcionario;
 import br.ufscar.pooa.model.servicos.EquipamentoAceitoParaServico;
 import br.ufscar.pooa.model.servicos.OrdemDeServico;
@@ -20,9 +25,12 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class ServicosMain {
+public class ServicoTrocaDePecasMain {
   public static void main(String[] args) {
     System.out.println("Aplicacao iniciada...");
+    System.out.println("Populando o banco de dados simulado...");
+    PopulaDBMain.main(args);
+
     EquipamentoAceitoParaServico equipamentoAceitoParaServico = new EquipamentoAceitoParaServico(
         "Toyama",
         "Gerador Toyama TG2800CX",
@@ -31,9 +39,11 @@ public class ServicosMain {
         50.00
     );
 
+
     System.out.println("Equipamento aceito para servico: " + equipamentoAceitoParaServico);
 
-    Cliente cliente = new Cliente(
+    // Uso de Factory Method
+    Cliente cliente = new FactoryPessoa().criarCliente(
         "Joao",
         "12345678910",
         "16999999999",
@@ -46,6 +56,10 @@ public class ServicosMain {
         LocalDate.now(),
         equipamentoAceitoParaServico
     );
+
+    // Uso de Singleton e interface
+    IDeposito deposito = Deposito.getInstancia();
+    deposito.adicionarEquipamento(equipamentoCliente);
 
     System.out.println("Cliente: " + cliente);
     System.out.println("Equipamento cliente: " + equipamentoCliente);
@@ -61,15 +75,20 @@ public class ServicosMain {
 
     System.out.println("Populando o estoque...");
 
+    // Uso de Singleton e interface
+    IEstoque estoque = Estoque.getInstancia();
+
     Equipamento equipamento = new Equipamento(
         12223212,
         "Toyama",
         "Gerador Toyama TG2800CX",
-        0,
+        1,
         2000.00,
         Arrays.asList("Gerador", "Gasolina")
-
     );
+
+    estoque.adicionarItem(equipamento);
+
 
     Peca filtroDeAr = new Peca(
         12223212,
@@ -82,6 +101,8 @@ public class ServicosMain {
         null
     );
 
+    estoque.adicionarItem(filtroDeAr);
+
     Peca filtroDeAr2 = new Peca(
         1222321211,
         "Toyama",
@@ -93,8 +114,12 @@ public class ServicosMain {
         Arrays.asList(equipamento)
     );
 
+    estoque.adicionarItem(filtroDeAr2);
+
     System.out.println("Populando os serviços fornecidos...");
 
+    // Uso de hierarquia de classes e polimorfismo de métodos
+    // ServicoFornecido é uma classe abstrata que possui métodos abstratos
     ServicoFornecido servicoFornecido = new TrocaDePeca(
         "Troca de filtro de ar",
         "Troca do filtro de ar do Gerador Toyama TG2800CX",
@@ -107,7 +132,9 @@ public class ServicosMain {
 
     System.out.println("Servico fornecido: " + servicoFornecido);
 
-    Funcionario funcionario = new Funcionario(
+
+    // Uso do Factory Method
+    Funcionario funcionario = new FactoryPessoa().criarFuncionario(
         "Jose",
         "12345678910",
         "16999999999",
@@ -154,6 +181,7 @@ public class ServicosMain {
 
     System.out.println("Servico: " + servico);
 
+    // Uso do State Pattern
     servico.iniciar();
 
     System.out.println("Servico: " + servico);
@@ -169,6 +197,7 @@ public class ServicosMain {
       System.out.println("Erro ao entregar equipamento (sem pagamento): " + e.getMessage());
     }
 
+    // Uso da interface Produto, que é implementada por Equipamento e Peca
     Item item = new Item(
         filtroDeAr,
         2
@@ -202,9 +231,10 @@ public class ServicosMain {
 
     String result = null;
     try {
+      // Uso de Facade Pattern e Strategy Pattern
       result = recibo.gerar();
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      e.printStackTrace();
     }
 
     System.out.println("PDF: " + result);

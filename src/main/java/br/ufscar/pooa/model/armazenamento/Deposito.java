@@ -17,16 +17,12 @@ public class Deposito implements IDeposito {
     this.equipamentosClientes = new HashSet<>();
   }
 
-  public synchronized Deposito getInstancia() {
+  public static synchronized Deposito getInstancia() {
     if (Deposito.instancia == null) {
       Deposito.instancia = new Deposito();
     }
 
     return Deposito.instancia;
-  }
-
-  public void adicionarEquipamento() {
-
   }
 
   @Override
