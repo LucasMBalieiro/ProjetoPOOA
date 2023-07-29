@@ -3,13 +3,9 @@ package br.ufscar.pooa;
 import br.ufscar.pooa.model.comercio.Item;
 import br.ufscar.pooa.model.comercio.Recibo;
 import br.ufscar.pooa.model.comercio.Venda;
-import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
-import br.ufscar.pooa.model.deposito.estoque.itens.Peca;
-import br.ufscar.pooa.model.pdfs.GeradorPdf;
-import br.ufscar.pooa.model.pdfs.GeradorPdfService;
-import br.ufscar.pooa.model.pdfs.GeradorRecibo;
+import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
+import br.ufscar.pooa.model.armazenamento.estoque.itens.Peca;
 import br.ufscar.pooa.model.pessoas.Cliente;
-import br.ufscar.pooa.model.pessoas.DadosPessoais;
 import br.ufscar.pooa.model.pessoas.Funcionario;
 import br.ufscar.pooa.model.servicos.EquipamentoAceitoParaServico;
 import br.ufscar.pooa.model.servicos.OrdemDeServico;
@@ -19,12 +15,10 @@ import br.ufscar.pooa.model.servicos.fornecidos.TrocaDePeca;
 import br.ufscar.pooa.model.servicos.laudo.LaudoTecnico;
 import br.ufscar.pooa.model.servicos.laudo.Recomendacao;
 import br.ufscar.pooa.model.servicos.servico.Servico;
-import br.ufscar.pooa.model.servicos.servico.status.Aprovado;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
 
 public class ServicosMain {
   public static void main(String[] args) {
@@ -40,13 +34,11 @@ public class ServicosMain {
     System.out.println("Equipamento aceito para servico: " + equipamentoAceitoParaServico);
 
     Cliente cliente = new Cliente(
+        "Joao",
         "12345678910",
-        new DadosPessoais(
-            "Joao",
-            "123456789",
-            "(82) 99999-9999",
-            "joao@joao.com"
-        )
+        "16999999999",
+        "jao@jao.com",
+        "Rua dos bobos, 0"
     );
 
     EquipamentoCliente equipamentoCliente = new EquipamentoCliente(
@@ -59,10 +51,10 @@ public class ServicosMain {
     System.out.println("Equipamento cliente: " + equipamentoCliente);
 
     OrdemDeServico ordemDeServico = new OrdemDeServico(
-        2000,
-        LocalDate.now(),
+        2000L,
+        cliente,
         Arrays.asList(equipamentoCliente),
-        "Defeito reclamado"
+        "Defeito reclamado pelo cliente"
     );
 
     System.out.println("Ordem de servico: " + ordemDeServico);
@@ -116,14 +108,14 @@ public class ServicosMain {
     System.out.println("Servico fornecido: " + servicoFornecido);
 
     Funcionario funcionario = new Funcionario(
-        "joao",
+        "Jose",
+        "12345678910",
+        "16999999999",
+        "jose@jose",
+        "Rua dos bobos, 0",
+        "jose",
         "12345",
-        new DadosPessoais(
-            "Joao da silva",
-            "123456789",
-            "(82) 99999-9999",
-            "joao@joao.com"
-        )
+        false
     );
 
     System.out.println("Funcionario: " + funcionario);
@@ -131,6 +123,7 @@ public class ServicosMain {
     System.out.println("Criando um laudo tecnico...");
 
     LaudoTecnico laudoTecnico = new LaudoTecnico(
+        2001L,
         Arrays.asList(
             new Recomendacao(
                 "Filtro de ar inutilizável",
@@ -202,14 +195,14 @@ public class ServicosMain {
     System.out.println("Venda: " + venda);
 
     venda.pagar();
-    Recibo recibo = new Recibo(1L, venda);
+    Recibo recibo = new Recibo(2L, venda);
 
     System.out.println("Venda: " + venda);
     System.out.println("Recibo: " + recibo);
 
     String result = null;
     try {
-      result = new GeradorPdfService(new GeradorRecibo(recibo)).gerar();
+      result = recibo.gerar();
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

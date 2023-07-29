@@ -1,5 +1,7 @@
 package br.ufscar.pooa.model.servicos.laudo;
 
+import br.ufscar.pooa.model.documentos.Documento;
+import br.ufscar.pooa.model.documentos.GeradorLaudoTecnico;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.pessoas.Funcionario;
 import br.ufscar.pooa.model.servicos.OrdemDeServico;
@@ -7,25 +9,30 @@ import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 
 import java.util.List;
 
-public class LaudoTecnico {
+public class LaudoTecnico extends Documento {
   private List<Recomendacao> recomendacoes;
   private double valorTotal;
+  private Cliente cliente;
   private EquipamentoCliente equipamento;
   private String laudo;
   private OrdemDeServico ordemDeServico;
   private Funcionario funcionario;
-  private String template;
 
-  public LaudoTecnico(List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, double valorTotal, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
+  public LaudoTecnico(Long id, List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, double valorTotal, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
+    super(id, "laudo_tecnico");
+
     this.recomendacoes = recomendacoes;
     this.ordemDeServico = ordemDeServico;
     this.valorTotal = valorTotal;
     this.equipamento = equipamento;
     this.laudo = laudo;
     this.funcionario = funcionario;
+    this.cliente = equipamento.getCliente();
+    this.geradorPdf = new GeradorLaudoTecnico(this);
   }
 
-  public LaudoTecnico(List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
+  public LaudoTecnico(Long id, List<Recomendacao> recomendacoes, OrdemDeServico ordemDeServico, EquipamentoCliente equipamento, String laudo, Funcionario funcionario) {
+    super(id, "laudo_tecnico");
     this.recomendacoes = recomendacoes;
     this.ordemDeServico = ordemDeServico;
     this.equipamento = equipamento;
@@ -33,7 +40,8 @@ public class LaudoTecnico {
     this.funcionario = funcionario;
 
     this.valorTotal = this.calcularValorTotal();
-    this.template = "laudo_tecnico";
+    this.cliente = equipamento.getCliente();
+    this.geradorPdf = new GeradorLaudoTecnico(this);
   }
 
   private double calcularValorTotal() {
@@ -43,6 +51,14 @@ public class LaudoTecnico {
     }
 
     return valorTotal;
+  }
+
+  public Cliente getCliente() {
+    return cliente;
+  }
+
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
   }
 
   public Funcionario getFuncionario() {
@@ -93,10 +109,6 @@ public class LaudoTecnico {
     this.laudo = laudo;
   }
 
-  public String getTemplate() {
-    return this.template;
-  }
-  
   @Override
   public String toString() {
     return "LaudoTecnico{" +

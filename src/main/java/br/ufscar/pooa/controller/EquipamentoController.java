@@ -1,6 +1,6 @@
 //package br.ufscar.pooa.controller;
-//import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
-//import br.ufscar.pooa.model.deposito.estoque.itens.Peca;
+//import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
+//import br.ufscar.pooa.model.armazenamento.estoque.itens.Peca;
 //
 //import java.util.ArrayList;
 //import java.util.List;

@@ -1,6 +1,6 @@
-package br.ufscar.pooa.model.deposito.estoque.itens;
+package br.ufscar.pooa.model.armazenamento.estoque.itens;
 
-import br.ufscar.pooa.model.deposito.estoque.services.IItemDeServico;
+import br.ufscar.pooa.model.armazenamento.estoque.IItemDeServico;
 
 import java.util.List;
 
@@ -18,5 +18,15 @@ public class Material extends ItemDeEstoque implements IItemDeServico {
 
   public void setQuantidade(String quantidade) {
     this.quantidade = quantidade;
+  }
+
+  @Override
+  public double getValor() {
+    return this.getValorDeVenda();
+  }
+
+  @Override
+  public String getDescricao() {
+    return this.getModelo() + " " + this.getMarca();
   }
 }

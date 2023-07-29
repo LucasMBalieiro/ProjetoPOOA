@@ -1,41 +1,42 @@
 package br.ufscar.pooa.model.servicos;
 
+import br.ufscar.pooa.model.documentos.Documento;
+import br.ufscar.pooa.model.documentos.GeradorOrdemDeServico;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class OrdemDeServico {
-  private long id;
-  private LocalDate dataEntrada;
+public class OrdemDeServico extends Documento {
+  private Cliente cliente;
   private List<EquipamentoCliente> equipamentos;
   private String defeitosReclamados;
-  private String template;
 
-  public OrdemDeServico(long id, LocalDate dataEntrada, List<EquipamentoCliente> equipamentos, String defeitosReclamados) {
-    this.id = id;
-    this.dataEntrada = dataEntrada;
+  public OrdemDeServico(Long id, Cliente cliente, List<EquipamentoCliente> equipamentos, String defeitosReclamados) {
+    super(id, "ordem_de_servico");
+
+    this.cliente = cliente;
     this.equipamentos = equipamentos;
     this.defeitosReclamados = defeitosReclamados;
-
-    this.template = "ordem_de_servico";
+    this.geradorPdf = new GeradorOrdemDeServico(this);
   }
 
-  public long getId() {
-    return id;
+  public OrdemDeServico(Long id, LocalDate dataEntrada, Cliente cliente, List<EquipamentoCliente> equipamentos, String defeitosReclamados) {
+    super(id, "ordem_de_servico", dataEntrada);
+
+    this.cliente = cliente;
+    this.equipamentos = equipamentos;
+    this.defeitosReclamados = defeitosReclamados;
+    this.geradorPdf = new GeradorOrdemDeServico(this);
   }
 
-  public void setId(long id) {
-    this.id = id;
+  public Cliente getCliente() {
+    return cliente;
   }
 
-  public LocalDate getDataEntrada() {
-    return dataEntrada;
-  }
-
-  public void setDataEntrada(LocalDate dataEntrada) {
-    this.dataEntrada = dataEntrada;
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
   }
 
   public List<EquipamentoCliente> getEquipamentos() {
@@ -57,14 +58,10 @@ public class OrdemDeServico {
   @Override
   public String toString() {
     return "OrdemDeServico{" +
-        "id=" + id +
-        ", dataEntrada=" + dataEntrada +
+        "id=" + this.getId() +
+        ", dataEntrada=" + this.getData() +
         ", equipamentos=" + equipamentos +
         ", defeitosReclamados='" + defeitosReclamados + '\'' +
         '}';
-  }
-
-  public String getTemplate() {
-    return this.template;
   }
 }

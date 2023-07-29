@@ -6,26 +6,39 @@ import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
 
 import java.util.ArrayList;
 
-public class Funcionario extends Usuario {
-  private DadosPessoais dadosPessoais;
+public class Funcionario extends Pessoa {
+  private String nomeDeUsuario;
+  private String senha;
+  private boolean isGerente;
 
-  public Funcionario(String nomeDeUsuario, String senha, DadosPessoais dadosPessoais) {
-    super(nomeDeUsuario, senha);
-    this.dadosPessoais = dadosPessoais;
+  public Funcionario(String nome, String cpf, String telefone, String email, String endereco, String nomeDeUsuario, String senha, boolean isGerente) {
+    super(nome, cpf, telefone, email, endereco);
+    this.nomeDeUsuario = nomeDeUsuario;
+    this.senha = senha;
+    this.isGerente = isGerente;
   }
 
-  public DadosPessoais getDadosPessoais() {
-    return dadosPessoais;
+  public String getNomeDeUsuario() {
+    return nomeDeUsuario;
   }
 
-  public void setDadosPessoais(DadosPessoais dadosPessoais) {
-    this.dadosPessoais = dadosPessoais;
+  public void setNomeDeUsuario(String nomeDeUsuario) {
+    this.nomeDeUsuario = nomeDeUsuario;
   }
 
-  @Override
-  public String toString() {
-    return "Funcionario{" +
-        "dadosPessoais=" + dadosPessoais +
-        '}';
+  public String getSenha() {
+    return senha;
+  }
+
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
+
+  public boolean isGerente() {
+    return isGerente;
+  }
+
+  public void setGerente(boolean gerente) {
+    isGerente = gerente;
   }
 }

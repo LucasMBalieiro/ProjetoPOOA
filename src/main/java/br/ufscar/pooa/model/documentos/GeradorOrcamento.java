@@ -1,20 +1,14 @@
-package br.ufscar.pooa.model.pdfs;
+package br.ufscar.pooa.model.documentos;
 
-import br.ufscar.pooa.model.servicos.OrdemDeServico;
+import br.ufscar.pooa.model.comercio.Orcamento;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.kernel.pdf.PdfDocument;
 
-public class GeradorOrdemDeServico extends GeradorPdf {
-  private final OrdemDeServico ordem;
+public class GeradorOrcamento extends GeradorPdf {
+  private final Orcamento orcamento;
 
-  public GeradorOrdemDeServico(OrdemDeServico ordem) {
-    this.ordem = ordem;
-  }
-
-
-  @Override
-  protected PdfDocument abrirDocumento() {
-    return null;
+  public GeradorOrcamento(Orcamento orcamento) {
+    super(orcamento);
+    this.orcamento = orcamento;
   }
 
   @Override

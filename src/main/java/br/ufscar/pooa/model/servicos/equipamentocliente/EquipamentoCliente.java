@@ -24,8 +24,6 @@ public class EquipamentoCliente {
     this.tipo = tipo;
     this.status = new EEmAnalise();
     this.servicos = new ArrayList<>();
-
-    this.cliente.adicionarEquipamento(this);
   }
 
   public EquipamentoCliente(Cliente cliente, LocalDate dataChegada, EquipamentoAceitoParaServico tipo, StatusEquipamento status) {
@@ -34,8 +32,6 @@ public class EquipamentoCliente {
     this.tipo = tipo;
     this.status = status;
     this.servicos = new ArrayList<>();
-
-    this.cliente.adicionarEquipamento(this);
   }
 
   public void iniciarManutencao() {
@@ -114,7 +110,7 @@ public class EquipamentoCliente {
   public String toString() {
     return "EquipamentoCliente{" +
         "id=" + id +
-        ", cliente=" + cliente.getDadosPessoais().getNome() +
+        ", cliente=" + cliente.getNome() +
         ", dataChegada=" + dataChegada +
         ", tipo=" + tipo +
         ", status=" + status +

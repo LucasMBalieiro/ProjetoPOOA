@@ -1,4 +1,5 @@
-package br.ufscar.pooa.model.deposito.estoque.itens;
+package br.ufscar.pooa.model.armazenamento.estoque.itens;
+
 
 import java.util.List;
 
@@ -18,8 +19,12 @@ public class Equipamento extends ItemDeEstoque {
     return pecas;
   }
 
-  public void setPecas(List<Peca> pecas) {
-    this.pecas = pecas;
+  public void adidionarPeca(Peca peca) {
+    this.pecas.add(peca);
+  }
+
+  public void removerPeca(Peca peca) {
+    this.pecas.remove(peca);
   }
 
   @Override
@@ -28,4 +33,6 @@ public class Equipamento extends ItemDeEstoque {
         "pecas=" + pecas +
         '}';
   }
+
+
 }

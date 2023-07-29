@@ -180,7 +180,7 @@ public class Servico {
   public String toString() {
     return "Servico{" +
         "nome='" + nome + '\'' +
-        ", equipamento=" + equipamento.getCliente().getDadosPessoais().getNome() +
+        ", equipamento=" + equipamento.getCliente().getNome() +
         ", daVenda=" + daVenda +
         ", dataInicio=" + dataInicio +
         ", responsavel=" + responsavel +

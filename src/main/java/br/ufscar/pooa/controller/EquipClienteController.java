@@ -2,8 +2,6 @@ package br.ufscar.pooa.controller;
 
 import br.ufscar.pooa.model.servicos.EquipamentoAceitoParaServico;
 import br.ufscar.pooa.model.servicos.equipamentocliente.EquipamentoCliente;
-import br.ufscar.pooa.model.deposito.estoque.itens.Equipamento;
-import br.ufscar.pooa.model.deposito.estoque.itens.Peca;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +54,7 @@ public class EquipClienteController {
 
     return equipamentosClientesPorMarca;
   }
-  
+
 
   public List<EquipamentoCliente> obterTodosEquip() {
     return equipamentosClientes;

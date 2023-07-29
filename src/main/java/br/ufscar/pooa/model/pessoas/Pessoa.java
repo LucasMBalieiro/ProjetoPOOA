@@ -1,16 +1,18 @@
 package br.ufscar.pooa.model.pessoas;
 
-public class DadosPessoais {
+public abstract class Pessoa {
   private String nome;
   private String cpf;
   private String telefone;
   private String email;
+  private String endereco;
 
-  public DadosPessoais(String nome, String cpf, String telefone, String email) {
+  public Pessoa(String nome, String cpf, String telefone, String email, String endereco) {
     this.nome = nome;
     this.cpf = cpf;
     this.telefone = telefone;
     this.email = email;
+    this.endereco = endereco;
   }
 
   public String getNome() {
@@ -45,13 +47,22 @@ public class DadosPessoais {
     this.email = email;
   }
 
+  public String getEndereco() {
+    return endereco;
+  }
+
+  public void setEndereco(String endereco) {
+    this.endereco = endereco;
+  }
+
   @Override
   public String toString() {
-    return "DadosPessoais{" +
+    return "Pessoa{" +
         "nome='" + nome + '\'' +
         ", cpf='" + cpf + '\'' +
         ", telefone='" + telefone + '\'' +
         ", email='" + email + '\'' +
+        ", endereco='" + endereco + '\'' +
         '}';
   }
 }

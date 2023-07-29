@@ -1,20 +1,14 @@
-package br.ufscar.pooa.model.pdfs;
+package br.ufscar.pooa.model.documentos;
 
-import br.ufscar.pooa.model.servicos.laudo.LaudoTecnico;
+import br.ufscar.pooa.model.servicos.OrdemDeServico;
 import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.kernel.pdf.PdfDocument;
 
-public class GeradorLaudoTecnico extends GeradorPdf {
-  private final LaudoTecnico laudo;
+public class GeradorOrdemDeServico extends GeradorPdf {
+  private final OrdemDeServico ordem;
 
-  public GeradorLaudoTecnico(LaudoTecnico laudo) {
-    this.laudo = laudo;
-  }
-  
-
-  @Override
-  protected PdfDocument abrirDocumento() {
-    return null;
+  public GeradorOrdemDeServico(OrdemDeServico ordem) {
+    super(ordem);
+    this.ordem = ordem;
   }
 
   @Override
