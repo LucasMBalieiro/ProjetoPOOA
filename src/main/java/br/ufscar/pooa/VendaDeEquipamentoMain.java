@@ -30,7 +30,15 @@ public class VendaDeEquipamentoMain {
     System.out.println("Vendendo equipamento...");
 
     // Pegando o primeiro equipamento do estoque
-    Produto equipamentoParaVenda = estoque.getItens().stream().findFirst().filter(i -> i instanceof Equipamento).get();
+    Produto equipamentoParaVenda = null;
+    for (int i = 0; i < estoque.getItens().size(); i++) {
+      Object objeto = estoque.getItens().toArray()[i];
+      if(objeto instanceof Equipamento) {
+        equipamentoParaVenda = (Produto) estoque.getItens().toArray()[i];
+      }
+    }
+
+//    Produto equipamentoParaVenda = estoque.getItens().stream().findAny().filter(i -> i instanceof Equipamento).get();
 
     System.out.println("Equipamento para venda: " + equipamentoParaVenda);
 
