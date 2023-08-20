@@ -13,13 +13,16 @@ public class Venda {
   private double valorTotal;
 
   // Constructor
-
-
   public Venda(List<Item> itens, Cliente cliente, List<Servico> servicos) {
     this.itens = itens;
     this.cliente = cliente;
     this.servicos = servicos;
 
+    this.valorTotal = calcularValorTotal();
+  }
+
+  public Venda(List<Item> itens) {
+    this.itens = itens;
     this.valorTotal = calcularValorTotal();
   }
 

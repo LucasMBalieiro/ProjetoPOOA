@@ -35,7 +35,11 @@ public class GeradorRecibo extends GeradorPdf {
     Map<String, String> dados = new HashMap<>();
 
     Cliente cliente = recibo.getCliente();
-    dados.put("Cliente", cliente.getNome());
+    if (cliente == null) {
+      dados.put("Cliente", "Não informado");
+    } else {
+      dados.put("Cliente", cliente.getNome());
+    }
 
     dados.put("Data", recibo.getData().toString());
 
