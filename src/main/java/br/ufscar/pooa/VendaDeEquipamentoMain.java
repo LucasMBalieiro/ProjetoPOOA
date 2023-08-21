@@ -7,6 +7,7 @@ import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
 import br.ufscar.pooa.model.comercio.Item;
 import br.ufscar.pooa.model.comercio.Produto;
 import br.ufscar.pooa.model.comercio.Recibo;
+import br.ufscar.pooa.model.comercio.NotaFiscal;
 import br.ufscar.pooa.model.comercio.Venda;
 import br.ufscar.pooa.model.pessoas.Cliente;
 
@@ -33,7 +34,7 @@ public class VendaDeEquipamentoMain {
     Produto equipamentoParaVenda = null;
     for (int i = 0; i < estoque.getItens().size(); i++) {
       Object objeto = estoque.getItens().toArray()[i];
-      if(objeto instanceof Equipamento) {
+      if (objeto instanceof Equipamento) {
         equipamentoParaVenda = (Produto) estoque.getItens().toArray()[i];
       }
     }
@@ -75,5 +76,10 @@ public class VendaDeEquipamentoMain {
     System.out.println("Gerando recibo...");
     Recibo recibo = new Recibo(20L, venda);
     recibo.gerar();
+
+    // Gerando a NF-e (Nota Fiscal Eletrônica)
+    System.out.println("Gerando nota fiscal...");
+    NotaFiscal notaFiscal = new NotaFiscal(20L, "Venda Usuário Final", 0.20, venda);
+    notaFiscal.gerar();
   }
 }
