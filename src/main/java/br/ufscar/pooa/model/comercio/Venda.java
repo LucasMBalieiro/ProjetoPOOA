@@ -3,30 +3,30 @@ package br.ufscar.pooa.model.comercio;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.servicos.servico.Servico;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 public class Venda {
   private List<Item> itens;
   private Cliente cliente;
   private List<Servico> servicos;
-  private double valorTotal;
+  private Pagamento pagamento; // necessario enquanto nao há banco de dados
 
-  // Constructor
   public Venda(List<Item> itens, Cliente cliente, List<Servico> servicos) {
     this.itens = itens;
     this.cliente = cliente;
     this.servicos = servicos;
+  }
 
-    this.valorTotal = calcularValorTotal();
+  public Venda(List<Item> itens, Cliente cliente) {
+    this.itens = itens;
+    this.cliente = cliente;
   }
 
   public Venda(List<Item> itens) {
     this.itens = itens;
-    this.valorTotal = calcularValorTotal();
   }
 
-  private double calcularValorTotal() {
+  public double getValorItens() {
     double valorTotal = 0;
     if (servicos != null) {
       for (Servico servico : servicos) {
@@ -83,12 +83,12 @@ public class Venda {
     this.servicos = servicos;
   }
 
-  public double getValorTotal() {
-    return valorTotal;
+  public Pagamento getPagamento() {
+    return pagamento;
   }
 
-  public void setValorTotal(double valorTotal) {
-    this.valorTotal = valorTotal;
+  public void setPagamento(Pagamento pagamento) {
+    this.pagamento = pagamento;
   }
 
   @Override
@@ -97,7 +97,6 @@ public class Venda {
         "itens=" + itens +
         ", cliente=" + cliente +
         ", servicos=" + servicos +
-        ", valorTotal=" + valorTotal +
         '}';
   }
 }

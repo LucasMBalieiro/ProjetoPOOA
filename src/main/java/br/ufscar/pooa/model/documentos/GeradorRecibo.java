@@ -3,6 +3,7 @@ package br.ufscar.pooa.model.documentos;
 import br.ufscar.pooa.model.comercio.Item;
 import br.ufscar.pooa.model.comercio.Recibo;
 import br.ufscar.pooa.model.comercio.Venda;
+import br.ufscar.pooa.model.comercio.descontos.DescontoDePagamento;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
@@ -20,14 +21,6 @@ public class GeradorRecibo extends GeradorPdf {
 
     this.recibo = recibo;
   }
-
-//  @Override
-//  protected PdfDocument abrirDocumento() throws IOException {
-//    PdfReader reader = new PdfReader(this.caminhoBaseTemplates + this.recibo.getTemplate() + ".pdf");
-//    PdfWriter writer = new PdfWriter(this.caminhoPdfGerado);
-//
-//    return new PdfDocument(reader, writer);
-//  }
 
   @Override
   protected void preencherCampos(PdfAcroForm form) {
@@ -54,6 +47,20 @@ public class GeradorRecibo extends GeradorPdf {
       dados.put("valor_" + i, String.valueOf(item.getProduto().getValor()));
       i++;
     }
+
+    List<DescontoDePagamento> descontos = venda.getPagamento().getDescontos();
+
+    int j = 1;
+    for (DescontoDePagamento desconto : descontos) {
+      dados.put("desconto_" + j, desconto.getNome());
+      dados.put("porcentagem_" + j, String.valueOf(desconto.getPercentualDesconto()));
+      dados.put("valordesconto_" + j, String.valueOf(desconto.getValorDesconto()));
+      j++;
+    }
+
+    dados.put("valorfinal", String.valueOf(venda.getPagamento().getTotal()));
+    dados.put("metodo", venda.getPagamento().getMetodo());
+
 
     for (Map.Entry<String, String> entry : dados.entrySet()) {
       String key = entry.getKey();

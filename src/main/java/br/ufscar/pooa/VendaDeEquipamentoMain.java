@@ -4,15 +4,14 @@ import br.ufscar.pooa.model.BDSimulado;
 import br.ufscar.pooa.model.armazenamento.estoque.Estoque;
 import br.ufscar.pooa.model.armazenamento.estoque.IEstoque;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
-import br.ufscar.pooa.model.comercio.Item;
-import br.ufscar.pooa.model.comercio.Produto;
-import br.ufscar.pooa.model.comercio.Recibo;
-import br.ufscar.pooa.model.comercio.Venda;
+import br.ufscar.pooa.model.comercio.*;
+import br.ufscar.pooa.model.comercio.descontos.DescontoPorMetodoDePagamentoAVista;
 import br.ufscar.pooa.model.pessoas.Cliente;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class VendaDeEquipamentoMain {
   public static void main(String[] args) throws IOException {
@@ -33,12 +32,10 @@ public class VendaDeEquipamentoMain {
     Produto equipamentoParaVenda = null;
     for (int i = 0; i < estoque.getItens().size(); i++) {
       Object objeto = estoque.getItens().toArray()[i];
-      if(objeto instanceof Equipamento) {
+      if (objeto instanceof Equipamento) {
         equipamentoParaVenda = (Produto) estoque.getItens().toArray()[i];
       }
     }
-
-//    Produto equipamentoParaVenda = estoque.getItens().stream().findAny().filter(i -> i instanceof Equipamento).get();
 
     System.out.println("Equipamento para venda: " + equipamentoParaVenda);
 
@@ -55,8 +52,7 @@ public class VendaDeEquipamentoMain {
     // Criando uma venda com o item de venda
     Venda venda = new Venda(
         Arrays.asList(itemDeVenda),
-        cliente,
-        null
+        cliente
     );
 
     System.out.println("Venda: " + venda);
@@ -67,13 +63,19 @@ public class VendaDeEquipamentoMain {
     System.out.println("Venda adicionada ao banco de dados simulado!");
 
     // Pagando venda
-    venda.pagar();
+    Pagamento pagamento = new GeradorDePagamento(
+        List.of(new DescontoPorMetodoDePagamentoAVista())
+    ).gerarPagamento(venda, "Dinheiro");
+
+    pagamento.pagar();
+
+    System.out.println("Pagamento " + pagamento + " realizado com sucesso!");
 
     System.out.println("Listando itens do estoque...");
     estoque.getItens().forEach(System.out::println);
 
     System.out.println("Gerando recibo...");
-    Recibo recibo = new Recibo(20L, venda);
+    Recibo recibo = new Recibo(21L, venda);
     recibo.gerar();
   }
 }
