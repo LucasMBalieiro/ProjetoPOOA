@@ -4,11 +4,10 @@ import br.ufscar.pooa.model.armazenamento.Deposito;
 import br.ufscar.pooa.model.armazenamento.IDeposito;
 import br.ufscar.pooa.model.armazenamento.estoque.Estoque;
 import br.ufscar.pooa.model.armazenamento.estoque.IEstoque;
-import br.ufscar.pooa.model.comercio.Item;
-import br.ufscar.pooa.model.comercio.Recibo;
-import br.ufscar.pooa.model.comercio.Venda;
+import br.ufscar.pooa.model.comercio.*;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Peca;
+import br.ufscar.pooa.model.comercio.descontos.DescontoPorMetodoDePagamentoAVista;
 import br.ufscar.pooa.model.pessoas.Cliente;
 import br.ufscar.pooa.model.pessoas.FactoryPessoa;
 import br.ufscar.pooa.model.pessoas.Funcionario;
@@ -24,6 +23,7 @@ import br.ufscar.pooa.model.servicos.servico.Servico;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.List;
 
 public class ServicoTrocaDePecasMain {
   public static void main(String[] args) {
@@ -223,8 +223,16 @@ public class ServicoTrocaDePecasMain {
 
     System.out.println("Venda: " + venda);
 
-    venda.pagar();
-    Recibo recibo = new Recibo(2L, venda);
+    // Pagando venda
+    Pagamento pagamento = new GeradorDePagamento(
+        List.of(new DescontoPorMetodoDePagamentoAVista())
+    ).gerarPagamento(venda, "PIX");
+
+    pagamento.pagar();
+
+    System.out.println("Pagamento " + pagamento + " realizado com sucesso!");
+
+    Recibo recibo = new Recibo(22L, venda);
 
     System.out.println("Venda: " + venda);
     System.out.println("Recibo: " + recibo);

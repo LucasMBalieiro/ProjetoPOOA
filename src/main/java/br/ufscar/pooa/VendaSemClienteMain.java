@@ -4,14 +4,13 @@ import br.ufscar.pooa.model.BDSimulado;
 import br.ufscar.pooa.model.armazenamento.estoque.Estoque;
 import br.ufscar.pooa.model.armazenamento.estoque.IEstoque;
 import br.ufscar.pooa.model.armazenamento.estoque.itens.Equipamento;
-import br.ufscar.pooa.model.comercio.Item;
-import br.ufscar.pooa.model.comercio.Produto;
-import br.ufscar.pooa.model.comercio.Recibo;
-import br.ufscar.pooa.model.comercio.Venda;
+import br.ufscar.pooa.model.comercio.*;
+import br.ufscar.pooa.model.comercio.descontos.DescontoPorMetodoDePagamentoAVista;
 import br.ufscar.pooa.model.pessoas.Cliente;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public class VendaSemClienteMain {
   public static void main(String[] args) throws IOException {
@@ -59,7 +58,13 @@ public class VendaSemClienteMain {
     System.out.println("Venda adicionada ao banco de dados simulado!");
 
     // Pagando venda
-    venda.pagar();
+    Pagamento pagamento = new GeradorDePagamento(
+        List.of(new DescontoPorMetodoDePagamentoAVista())
+    ).gerarPagamento(venda, "PIX");
+
+    pagamento.pagar();
+
+    System.out.println("Pagamento " + pagamento + " realizado com sucesso!");
 
     System.out.println("Listando itens do estoque...");
     estoque.getItens().forEach(System.out::println);
