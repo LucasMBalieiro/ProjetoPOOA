@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ServicoTrocaDePecasMain {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     System.out.println("Aplicacao iniciada...");
     System.out.println("Populando o banco de dados simulado...");
     PopulaDBMain.main(args);
@@ -235,15 +235,15 @@ public class ServicoTrocaDePecasMain {
     Recibo recibo = new Recibo(22L, venda);
 
     System.out.println("Venda: " + venda);
+
+    // Gerando a NF-e (Nota Fiscal Eletrônica)
+    System.out.println("Gerando nota fiscal...");
+    NotaFiscal notaFiscal = new NotaFiscal(20L, "Venda Usuário Final", 0.20, venda);
+    notaFiscal.gerar();
+
     System.out.println("Recibo: " + recibo);
 
-    String result = null;
-    try {
-      // Uso de Facade Pattern e Strategy Pattern
-      result = recibo.gerar();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    String result = recibo.gerar();
 
     System.out.println("PDF: " + result);
 

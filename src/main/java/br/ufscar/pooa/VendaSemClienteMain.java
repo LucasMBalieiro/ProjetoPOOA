@@ -72,5 +72,10 @@ public class VendaSemClienteMain {
     System.out.println("Gerando recibo...");
     Recibo recibo = new Recibo(21L, venda);
     recibo.gerar();
+
+    // Gerando a NF-e (Nota Fiscal Eletrônica)
+    System.out.println("Gerando nota fiscal...");
+    NotaFiscal notaFiscal = new NotaFiscal(20L, "Venda Usuário Final", 0.20, venda);
+    notaFiscal.gerar();
   }
 }
