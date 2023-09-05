@@ -24,7 +24,7 @@ Tal sistema foi projetado e desenvolvido durante o curso de _Programação Orien
 
 ## :classical_building: Arquitetura e Padrões de projeto
 
-Neste projeto utilizamos a arquitetura MVC para melhor organizar as responsabilidades das entidades no sistema:
+Neste projeto utilizamos a **arquitetura MVC (Model View Controller)** para melhor organizar as responsabilidades das entidades no sistema:
 
 <p align="center">
    <img src="https://github.com/LucasMBalieiro/ProjetoPOOA/assets/92659173/730aad6b-9bef-49e1-b71b-d1ce6e605936"  width="800"/>
@@ -34,13 +34,41 @@ Neste projeto utilizamos a arquitetura MVC para melhor organizar as responsabili
    </p>
 </p>
 
-Além disso, utilizamos diversos padrões de projeto orientado à objetos no sistema.
+Além disso, utilizamos diversos **padrões de projeto** orientado à objetos no sistema. Os padrões de projeto (design patterns) são soluções típicas para problemas comuns em projeto de software. Cada padrão é como uma planta de construção que você pode customizar para resolver um problema de projeto particular em seu código (veja mais em [Refactoring Guru]). Nós utilizamos vários, como o padrão _state_, _decorator_, _strategy_, entre outros. Por exemplo, utilizamos o padrão _state_ para gerenciar as mudanças de estado da classe `Servico`:
 
+<p align="center">
+   <img src="https://github.com/LucasMBalieiro/ProjetoPOOA/assets/92659173/9f936dfb-ce7d-4b94-971d-81e164afeab1"  width="800"/>
+   <p align="center">
+      <i>Padrão state utilizado para gerenciar os estados da classe Servico
+</i>
+   </p>
+</p>
+
+<p align="center">
+   <img src="https://github.com/LucasMBalieiro/ProjetoPOOA/assets/92659173/ce9093ee-391b-4ce5-b1ef-6ed86b75090f"  width="800"/>
+   <p align="center">
+      <i>Padrão singleton aplicado na classe Deposito.
+</i>
+   </p>
+</p>
+
+Todos os padrões aplicados, a arquitetura como um todo e as classes utilizadas podem ser visualizados no [Diagrama de classes] do projeto. 
 
 ## :hammer: Funcionalidades
 
 - `Funcionalidade 1` `Gerenciamento de serviços`: O sistema permite o gerenciamento de um serviço em todo seu ciclo de vida na loja.
+- `Funcionalidade 2` `Gerenciamento de clientes`: O sistema permite o gerenciamento dos clientes na loja.
+- `Funcionalidade 3` `Venda de produtos e serviços`: O sistema suporta a venda de produtos no estoque e serviços fornecidos aos clientes.
+- `Funcionalidade 4` `Impressão de documentos`: O sistema gera automaticamente os documentos necessários no momento em que são requisitados (recibo de pagamento ao ser efetuado o pagamento da venda).
 - `Entre outras...`.
+
+<p align="center">
+   <img src="https://github.com/LucasMBalieiro/ProjetoPOOA/assets/92659173/03037533-7a8c-4898-a66f-8cf6f2de73b3"  width="500"/>
+   <p align="center">
+      <i>Recibo gerado automaticamente pelo sistema.
+</i>
+   </p>
+</p>
 
 <!--
 <p align="center">
@@ -59,4 +87,6 @@ Ideias de melhorias para o projeto:
 -->
 
 [Java]: https://www.java.com/pt-BR/
+[Refactoring Guru]: https://refactoring.guru/pt-br/design-patterns
+[Diagrama de classes]: https://github.com/LucasMBalieiro/ProjetoPOOA/blob/main/diagrama.asta
 
