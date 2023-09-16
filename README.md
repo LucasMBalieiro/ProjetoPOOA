@@ -3,7 +3,7 @@
       <img src="https://user-images.githubusercontent.com/92659173/208775299-8a384f52-7cbe-4af6-8d11-2de7d61b3a1e.svg" width="100" align="center" />
       <img src="https://user-images.githubusercontent.com/92659173/208777593-0b0906f0-2e13-420f-a435-b78f0151671e.png" width="100" align="center" />
      
-      Implementação do projeto prático de POOA
+      Sistema de gerenciamento de comércio e serviços de bombas e motores d'água
    </p>
    <img src="https://img.shields.io/github/license/vinimrs/VinChat?color=black" align="center" />
 </h1>
